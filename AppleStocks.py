@@ -25,7 +25,6 @@ def get_max_profit(stock_prices_yesterday):
             earlier_price = stock_prices_yesterday[outer_price]
             later_price = stock_prices_yesterday[inner_price]
 
-
             potential_max_profit = later_price - earlier_price
 
             max_profit = max(max_profit, potential_max_profit)
