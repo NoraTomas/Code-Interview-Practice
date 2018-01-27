@@ -14,22 +14,22 @@ stock_prices_yesterday = [10, 7, 5, 8, 11, 9]
 
 def get_max_profit(stock_prices_yesterday):
 
+    min_stock_price = stock_prices_yesterday[0]
+    max_stock_price = stock_prices_yesterday[0]
+
     max_profit = 0
 
-    for outer_price in range(len(stock_prices_yesterday)):
-        for inner_price in range(outer_price+1, len(stock_prices_yesterday)):
+    for stock_price in stock_prices_yesterday:
+        if stock_price < min_stock_price:
+            min_stock_price = stock_price
+            max_stock_price = 0
 
-            print("Outer price: " + str(outer_price))
-            print("Inner price: " + str(inner_price))
-
-            earlier_price = stock_prices_yesterday[outer_price]
-            later_price = stock_prices_yesterday[inner_price]
-
-            potential_max_profit = later_price - earlier_price
-
-            max_profit = max(max_profit, potential_max_profit)
+        elif stock_price > max_stock_price:
+            max_stock_price = stock_price
+            max_profit = max_stock_price - min_stock_price
 
     return max_profit
+
 
 
 print(get_max_profit(stock_prices_yesterday))
