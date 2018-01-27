@@ -14,19 +14,16 @@ stock_prices_yesterday = [10, 7, 5, 8, 11, 9]
 
 def get_max_profit(stock_prices_yesterday):
 
-    min_stock_price = stock_prices_yesterday[0]
-    max_stock_price = stock_prices_yesterday[0]
+    min_price = stock_prices_yesterday[0]
 
     max_profit = 0
 
-    for stock_price in stock_prices_yesterday:
-        if stock_price < min_stock_price:
-            min_stock_price = stock_price
-            max_stock_price = 0
+    for current_price in stock_prices_yesterday:
+        min_price = min(min_price, current_price)
 
-        elif stock_price > max_stock_price:
-            max_stock_price = stock_price
-            max_profit = max_stock_price - min_stock_price
+        potential_profit = current_price - min_price
+
+        max_profit = max(max_profit, potential_profit)
 
     return max_profit
 
