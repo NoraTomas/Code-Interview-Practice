@@ -23,11 +23,18 @@ ints = [1, 7, 3, 4]
 result_list = []
 
 def get_product_of_all_ints_except_at_index():
-    prod_all_ints_values = reduce(lambda x,y: x*y, ints)
-
     for int in ints:
-        result_list.append(prod_all_ints_values/int)
+        result_list.append(multiply_list(ints)/int)
 
-    print(result_list)
+
+
+def multiply_list(numbers):
+    product = 1
+
+    for int in numbers:
+        product = product*int
+
+    return product
 
 get_product_of_all_ints_except_at_index()
+print(result_list)
