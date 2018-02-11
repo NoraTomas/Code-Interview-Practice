@@ -20,21 +20,20 @@ from functools import reduce
 
 ints = [1, 7, 3, 4]
 
-result_list = []
+
 
 def get_product_of_all_ints_except_at_index():
-    for int in ints:
-        result_list.append(multiply_list(ints)/int)
+    result_list = []
+    temp = 1
 
+    for i, outer in enumerate(ints):
+        for j, inner in enumerate(ints):
+            if not i == j:
+                temp *= inner
 
+        result_list.append(temp)
+        temp = 1
 
-def multiply_list(numbers):
-    product = 1
+    return result_list
 
-    for int in numbers:
-        product = product*int
-
-    return product
-
-get_product_of_all_ints_except_at_index()
-print(result_list)
+print(get_product_of_all_ints_except_at_index())
