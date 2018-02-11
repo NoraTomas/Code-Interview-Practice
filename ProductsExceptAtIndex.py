@@ -21,19 +21,23 @@ from functools import reduce
 ints = [1, 7, 3, 4]
 
 
-
 def get_product_of_all_ints_except_at_index():
     result_list = []
-    temp = 1
+    products_before_index_list = []
+    products_after_index_list = []
 
-    for i, outer in enumerate(ints):
-        for j, inner in enumerate(ints):
-            if not i == j:
-                temp *= inner
+    for i,num in enumerate(ints):
+        if (i == 0):
+            products_before_index_list.append(1)
 
-        result_list.append(temp)
-        temp = 1
+        else:
+            temp = products_before_index_list[i-1]
 
-    return result_list
+            products_before_index_list.append(temp*num)
+            print(products_before_index_list)
+
+
+
+
 
 print(get_product_of_all_ints_except_at_index())
