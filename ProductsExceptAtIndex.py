@@ -16,8 +16,6 @@ by calculating:
 
 """
 
-from functools import reduce
-
 ints = [1, 7, 3, 4]
 
 
@@ -26,17 +24,13 @@ def get_product_of_all_ints_except_at_index():
     products_before_index_list = []
     products_after_index_list = []
 
+    temp = 1
     for i,num in enumerate(ints):
-        if (i == 0):
-            products_before_index_list.append(1)
+        products_before_index_list.append(temp)
+        temp = products_before_index_list[i] * ints[i-1]
 
-        else:
-            temp = products_before_index_list[i-1]
-
-            products_before_index_list.append(temp*num)
 
     last_index = len(ints) - 1
-
     temp = 1
     for i in range(last_index, -1, -1):
         if i == last_index:
@@ -45,10 +39,10 @@ def get_product_of_all_ints_except_at_index():
         else:
             index_after_i = i+1
             temp *= ints[index_after_i]
-            print(temp)
             products_after_index_list.insert(0, temp)
 
-        print(products_after_index_list)
+    print(products_before_index_list)
+    print(products_after_index_list)
 
 
 
