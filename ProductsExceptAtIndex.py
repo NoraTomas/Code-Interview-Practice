@@ -34,7 +34,21 @@ def get_product_of_all_ints_except_at_index():
             temp = products_before_index_list[i-1]
 
             products_before_index_list.append(temp*num)
-            print(products_before_index_list)
+
+    last_index = len(ints) - 1
+
+    temp = 1
+    for i in range(last_index, -1, -1):
+        if i == last_index:
+            products_after_index_list.insert(last_index, 1)
+
+        else:
+            index_after_i = i+1
+            temp *= ints[index_after_i]
+            print(temp)
+            products_after_index_list.insert(0, temp)
+
+        print(products_after_index_list)
 
 
 
