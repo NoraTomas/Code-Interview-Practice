@@ -25,24 +25,25 @@ def get_product_of_all_ints_except_at_index():
     products_after_index_list = []
 
     temp = 1
-    for i,num in enumerate(ints):
-        products_before_index_list.append(temp)
-        temp = products_before_index_list[i] * ints[i]
-
-
-    last_index = len(ints) - 1
-    temp = 1
+    last_index = len(ints)-1
     for i in range(last_index, -1, -1):
-        if i == last_index:
-            products_after_index_list.insert(last_index, 1)
+        if(i == last_index):
+            products_after_index_list.insert(0, 1)
 
         else:
-            index_after_i = i+1
-            temp *= ints[index_after_i]
+            temp *= ints[i+1]
             products_after_index_list.insert(0, temp)
 
-    print(products_before_index_list)
+    product_before_index_so_far = 1
+
+    for i,n in enumerate(ints):
+        result_list.append(product_before_index_so_far *
+                           products_after_index_list[i])
+        product_before_index_so_far *= n
+
+
     print(products_after_index_list)
+    print(result_list)
 
 
 
