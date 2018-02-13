@@ -21,7 +21,6 @@ ints = [1, 7, 3, 4]
 
 def get_product_of_all_ints_except_at_index():
     result_list = []
-    products_before_index_list = []
     products_after_index_list = []
 
     temp = 1
@@ -44,9 +43,5 @@ def get_product_of_all_ints_except_at_index():
 
     print(products_after_index_list)
     print(result_list)
-
-
-
-
 
 print(get_product_of_all_ints_except_at_index())
