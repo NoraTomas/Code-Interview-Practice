@@ -27,7 +27,7 @@ def get_product_of_all_ints_except_at_index():
     temp = 1
     for i,num in enumerate(ints):
         products_before_index_list.append(temp)
-        temp = products_before_index_list[i] * ints[i-1]
+        temp = products_before_index_list[i] * ints[i]
 
 
     last_index = len(ints) - 1
