@@ -14,9 +14,6 @@ highest_integers_so_far = [1, 1, 1]
 def highest_product_from_three_integers():
     result = 1
 
-    for i,n in enumerate(list_of_ints):
-        highest_integers_so_far.
-
     for i,n in enumerate(highest_integers_so_far):
         result *= n
 
